@@ -12,5 +12,31 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass('app.scss')
+
+  /*  .styles([
+
+            'bootstrap.css',
+            'colors.css',
+            'components.css',
+            'core.css',
+            'extras/aninate.min.css',
+            'icons/fontawesome/style.min.css',
+            'icons/icomoon/style.css',
+    ], '.public/css/libs.css')
+
+
+        .scripts([
+            'pages/dashboard.js',
+            'pages/login_validation.js',
+            'pages/login.js',
+            'pages/user_pages_list.js',
+            'pages/user_pages_profile.js',
+
+
+
+        ], '.public/js/libs.css')
+*/
+
+
 });
