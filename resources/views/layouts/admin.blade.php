@@ -101,18 +101,12 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown language-switch">
 					<a class="dropdown-toggle" data-toggle="dropdown">
-						<img src="assets/images/flags/gb.png" class="position-left" alt="">
+						<img src="" class="position-left" alt="">
 						English
 						<span class="caret"></span>
 					</a>
 
-					<ul class="dropdown-menu">
-						<li><a class="deutsch"><img src="assets/images/flags/de.png" alt=""> Deutsch</a></li>
-						<li><a class="ukrainian"><img src="assets/images/flags/ua.png" alt=""> Українська</a></li>
-						<li><a class="english"><img src="assets/images/flags/gb.png" alt=""> English</a></li>
-						<li><a class="espana"><img src="assets/images/flags/es.png" alt=""> España</a></li>
-						<li><a class="russian"><img src="assets/images/flags/ru.png" alt=""> Русский</a></li>
-					</ul>
+
 				</li>
 
 				<li class="dropdown">
@@ -209,7 +203,7 @@
 				<li class="dropdown dropdown-user">
 					<a class="dropdown-toggle" data-toggle="dropdown">
 						<img src="assets/images/demo/users/face11.jpg" alt="">
-						<span>Victoria</span>
+						<span>{{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</span>
 						<i class="caret"></i>
 					</a>
 
@@ -244,9 +238,9 @@
 							<div class="media">
 								<a href="#" class="media-left"><img src="assets/images/demo/users/face11.jpg" class="img-circle img-sm" alt=""></a>
 								<div class="media-body">
-									<span class="media-heading text-semibold">Victoria Baker</span>
+									<span class="media-heading text-semibold">{{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</span>
 									<div class="text-size-mini text-muted">
-										<i class="icon-pin text-size-small"></i> &nbsp;Santa Ana, CA
+										<i class="icon-pin text-size-small"></i> {{{ isset(Auth::user()->name) ? Auth::user()->role->name : Auth::user()->email }}}
 									</div>
 								</div>
 
@@ -270,16 +264,16 @@
 
 								<!-- Main -->
 								<li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
-								<li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+								<li class="active"><a href="http://www.codehacking.com/admin/users"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
 								<li>
 									<a href="#"><i class="icon-user"></i> <span>Users</span></a>
 									<ul>
-										<li><a href="layout_navbar_fixed.html">Create User</a></li>
-										<li><a href="layout_navbar_sidebar_fixed.html">2nd User</a></li>
-										<li><a href="layout_sidebar_fixed_native.html">3rd User</a></li>
-										<li><a href="layout_navbar_hideable.html">4th User</a></li>
-										<li><a href="layout_navbar_hideable_sidebar.html">5th User</a></li>
-										<li><a href="layout_footer_fixed.html">6th User</a></li>
+										<li><a href="http://www.codehacking.com/admin/users">Users List</a></li>
+										<li><a href="http://www.codehacking.com/admin/users/create">Create User</a></li>
+										<li><a href="">3rd User</a></li>
+										<li><a href="">4th User</a></li>
+										<li><a href="">5th User</a></li>
+										<li><a href="">6th User</a></li>
 										<li class="navigation-divider"></li>
 										<li><a href="boxed_default.html">7th User</a></li>
 										<li><a href="boxed_mini.html">8th User</a></li>
