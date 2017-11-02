@@ -268,8 +268,8 @@
 								<li>
 									<a href="#"><i class="icon-user"></i> <span>Users</span></a>
 									<ul>
-										<li><a href="http://www.codehacking.com/admin/users">Users List</a></li>
-										<li><a href="http://www.codehacking.com/admin/users/create">Create User</a></li>
+										<li><a href="{{route('admin.users.index')}}">Users List</a></li>
+										<li><a href="{{route('admin.users.create')}}">Create User</a></li>
 										<li><a href="">3rd User</a></li>
 										<li><a href="">4th User</a></li>
 										<li><a href="">5th User</a></li>
