@@ -213,7 +213,7 @@
 						<li><a href="#"><span class="badge bg-teal-400 pull-right">58</span> <i class="icon-comment-discussion"></i> Messages</a></li>
 						<li class="divider"></li>
 						<li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
-						<li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+						<li><a href="{{url('/logout')}}"><i class="icon-switch2"></i> Logout</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -240,7 +240,7 @@
 								<div class="media-body">
 									<span class="media-heading text-semibold">{{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</span>
 									<div class="text-size-mini text-muted">
-										<i class="icon-pin text-size-small"></i> {{{ isset(Auth::user()->name) ? Auth::user()->role->name : Auth::user()->email }}}
+										<i class="icon-pin text-size-small"></i> {{{ isset(Auth::user()->name) ? Auth::user()->role['name'] : Auth::user()->email }}}
 									</div>
 								</div>
 

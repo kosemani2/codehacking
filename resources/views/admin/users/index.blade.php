@@ -46,7 +46,7 @@
 
                             <tr>
                                  <td>{{$ct}}</td>
-                                 <td>{{$user->name}}</td>
+                                 <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
                                  <td>{{$user->email}}</td>
                                  <td>{{$user->is_active = 1 ? 'Active':'Non-Active' }}</td>
                                  <td>{{ $user->role['name'] }}</td>
