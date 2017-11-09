@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserEditRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -10,6 +11,7 @@ use App\Http\Requests;
 use App\User;
 use App\Role;
 use App\Photo;
+use Illuminate\Support\Facades\Auth;
 
 class adminUserController extends Controller
 {
@@ -21,7 +23,17 @@ class adminUserController extends Controller
     public function index()
     {
         $users=User::all();
-        return view('admin.users.index', compact('users'));
+
+
+        if (Auth::check()){
+            if (Auth::User()->isAdmin()){
+
+                return view('admin.users.index', compact('users'));
+            }
+
+             return redirect('/');
+        }
+
     }
 
     /**
@@ -48,13 +60,32 @@ class adminUserController extends Controller
      /*   User::create($request->all());
         */
 
-     $input=$request->all();
+
+
+//    $input=$request->all();
+
+//        this is to prevent an empty space our password. checkout tags for laravel
+
+        if (trim($request->password ) == '')
+
+            $input=$request->except('password');
+
+        else{
+
+                $input=$request->all();
+            }
+
+
+
+
+
+
      $input['password']=bcrypt($request->password);
 
      if ($file=$request->file('photo_id')){
 
         $name= time() . $file->getClientOriginalName();
-        $file->move('images','name');
+        $file->move('images',$name);
         $photo=Photo::create(['file'=>$name]);
         $input['photo_id']=$photo->id;
 
@@ -101,9 +132,25 @@ class adminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserEditRequest $request, $id)
     {
-        //
+        $input=$request->all();
+        $user=User::findOrfail($id);
+
+
+        if ($file=$request->file('photo_id')){
+
+            $name= time().$file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo=Photo::create(['file'=>$name]);
+            $input['photo_id']=$photo->id;
+        }
+//
+
+
+
+        $user->update($input);
+        return redirect('admin/users');
     }
 
     /**

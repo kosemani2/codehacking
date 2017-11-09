@@ -6,7 +6,7 @@
     @include('inc.premore')
     @include('inc.semimore')
 
-    <h5 class="panel-title">Create User</h5>
+    <h5 class="panel-title">Edit User</h5>
     <div class="heading-elements">
         <ul class="icons-list">
             <li><a data-action="collapse"></a></li>
@@ -40,7 +40,7 @@
 
     <div class="form-group">
         {!! Form::label('is_active','Status:') !!}
-        {!! Form::select('is_active',[0=>'inactive',1=>'active'],0,['class'=>'form-control']) !!}
+        {!! Form::select('is_active',[0=>'inactive',1=>'active'],null,['class'=>'form-control']) !!}
 
     </div>
 
@@ -50,17 +50,13 @@
     </div>
 
 
-    <div class="form-group">
-        {!! Form::label('password','Password:') !!}
-        {!! Form::password('password',['class'=>'form-control']) !!}
 
-    </div>
 
 
 
     <div class="form-group">
 
-        {!! Form::submit('Create Post',['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Edit User',['class'=>'btn btn-primary']) !!}
 
     </div>
 

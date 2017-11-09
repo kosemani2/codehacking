@@ -40,7 +40,7 @@
 
     <div class="form-group">
         {!! Form::label('is_active','Status:') !!}
-        {!! Form::select('is_active',[0=>'inactive',1=>'active'],0,['class'=>'form-control']) !!}
+        {!! Form::select('is_active',[0=>'inactive',1=>'active'],null,['class'=>'form-control']) !!}
 
     </div>
 

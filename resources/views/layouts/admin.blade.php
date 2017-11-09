@@ -100,10 +100,9 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown language-switch">
-					<a class="dropdown-toggle" data-toggle="dropdown">
-						<img src="" class="position-left" alt="">
-						English
-						<span class="caret"></span>
+					<a href="">
+						<img height=35px; src="/images/{{isset($user->photo)?$user->photo['file']:"has no photo"}}" class="position-left img-circle img-sm" alt="">
+
 					</a>
 
 
@@ -236,7 +235,7 @@
 					<div class="sidebar-user">
 						<div class="category-content">
 							<div class="media">
-								<a href="#" class="media-left"><img src="assets/images/demo/users/face11.jpg" class="img-circle img-sm" alt=""></a>
+								<a href="#" class="media-left"><img src="/images/{{isset($user->photo)?$user->photo['file']:"has no photo"}}" class="img-circle img-sm" alt=""></a>
 								<div class="media-body">
 									<span class="media-heading text-semibold">{{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</span>
 									<div class="text-size-mini text-muted">
@@ -268,7 +267,7 @@
 								<li>
 									<a href="#"><i class="icon-user"></i> <span>Users</span></a>
 									<ul>
-										<li><a href="{{route('admin.users.index')}}">Users List</a></li>
+										<li>{{link_to_route('admin.users.index', 'Users List')}}</li>
 										<li><a href="{{route('admin.users.create')}}">Create User</a></li>
 										<li><a href="">3rd User</a></li>
 										<li><a href="">4th User</a></li>

@@ -2,7 +2,7 @@
 
 
 
-    <div class="alert alert-danger">
+    <div class="alert alert-danger alert-info">
 
         <ul>
 

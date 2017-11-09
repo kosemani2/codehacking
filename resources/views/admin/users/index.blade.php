@@ -27,6 +27,7 @@
                     <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Photo</th>
                     <th>Active</th>
                     <th>Role</th>
                     <th>Created</th>
@@ -47,9 +48,10 @@
                             <tr>
                                  <td>{{$ct}}</td>
                                  <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
-                                 <td>{{$user->email}}</td>
-                                 <td>{{$user->is_active = 1 ? 'Active':'Non-Active' }}</td>
-                                 <td>{{ $user->role['name'] }}</td>
+                                <td>{{$user->email}}</td>
+                                <td><img height='50' src="/images/{{ isset($user->photo)?$user->photo['file']:"has no photo"}}" alt=""></td>
+                                 <td>{{$user->is_active == 0 ? 'Inactive':'Active' }}</td>
+                                 <td>{{$user->role['name'] }}</td>
                                  <td>{{$user->created_at->diffForHumans()}}</td>
                                  <td>{{$user->updated_at->diffForHumans()}}</td>
                             </tr>

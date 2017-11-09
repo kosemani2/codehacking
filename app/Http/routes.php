@@ -17,6 +17,13 @@ Route::get('/', function () {
 
 Route::auth();
 
+
+Route::group(['middleware','AdminMiddleware'],function(){
+
+    Route::resource('/admin/users','AdminUserController');
+});
+
+
 Route::get('/home', 'HomeController@index');
 
-Route::resource('/admin/users','AdminUserController');
+

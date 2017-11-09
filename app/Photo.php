@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class photo extends Model
 {
     protected $fillable = [
-        'name'
+        'file'
     ];
+
+
+
 }
+
+
