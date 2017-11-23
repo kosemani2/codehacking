@@ -10,8 +10,10 @@ class photo extends Model
         'file'
     ];
 
+   public function post(){
 
-
+       return $this->hasOne('App\Post');
+   }
 }
 
 
